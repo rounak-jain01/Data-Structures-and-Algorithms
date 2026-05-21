@@ -10,5 +10,7 @@ def remove_duplicate(arr,n):
 
 
 
+
+
 arr = [1,1,2,2,3,3]
 print(remove_duplicate(arr,len(arr)))
