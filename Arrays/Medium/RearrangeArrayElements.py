@@ -37,8 +37,6 @@ class RearrangeArrayElementBySign:
         n = len(arr)
         pos = [] 
         neg = []
-        posIndex = 0
-        negIndex = 1
 
         for i in arr:
             if i < 0:
@@ -56,6 +54,15 @@ class RearrangeArrayElementBySign:
             for i in range(len(neg),len(pos)):
                 arr[idx] = pos[i]
                 idx+= 1
+        else:
+            for i in range(len(pos)):
+                arr[2*i] = pos[i]
+                arr[2*i+1] = neg[i]
+            
+            idx = len(pos) * 2
+            for i in range(len(pos),len(neg)):
+                arr[idx] = neg[i]
+                idx+= 1
 
         
 
@@ -66,7 +73,7 @@ class RearrangeArrayElementBySign:
 
 
 
-arr = [3,1,-2,-5,2,4,9]
+arr = [3,1, -9,-2,-5,-2]
 obj = RearrangeArrayElementBySign
 obj.secondVariety(arr)
 # print(arr)
